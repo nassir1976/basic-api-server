@@ -4,7 +4,7 @@
 // and it provides us with structure and readability that old JS didn't
 
 // this model is meant to be dynamic, meaning it can "get, create, update, delete" any type of resource
-class FoodModel {
+class ClothesModels {
   constructor() {
     this.id = 0;
     this.db = [];
@@ -12,7 +12,6 @@ class FoodModel {
 
   // READ -> will work for returning all items in our db or a specific item
   get(id) {
-    console.log(id)
     if (id) {
       return this.db.find(record => record.id === id);
     } else {
@@ -32,6 +31,11 @@ class FoodModel {
   }
 
   // UPDATE 
+  // update(id, obj) {
+  //   if(id) {
+  //     return obj
+  //   }
+  // }
   update(id, obj) {
     for(let i = 0; i<this.db.length;i++)
     if(this.db[i].id === id) {
@@ -50,4 +54,4 @@ class FoodModel {
   }
 }
 
-module.exports = FoodModel;
+module.exports = ClothesModels;
